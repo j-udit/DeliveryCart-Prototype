@@ -1,0 +1,55 @@
+@page
+@model RazorPagesDeliveryCart.Pages_Shoppers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Shopper</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Shopper.ID" />
+            <div class="form-group">
+                <label asp-for="Shopper.FirstName" class="control-label"></label>
+                <input asp-for="Shopper.FirstName" class="form-control" />
+                <span asp-validation-for="Shopper.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shopper.LastName" class="control-label"></label>
+                <input asp-for="Shopper.LastName" class="form-control" />
+                <span asp-validation-for="Shopper.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shopper.Address" class="control-label"></label>
+                <input asp-for="Shopper.Address" class="form-control" />
+                <span asp-validation-for="Shopper.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shopper.PhoneNumber" class="control-label"></label>
+                <input asp-for="Shopper.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Shopper.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shopper.PaymentMethod" class="control-label"></label>
+                <input asp-for="Shopper.PaymentMethod" class="form-control" />
+                <span asp-validation-for="Shopper.PaymentMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
